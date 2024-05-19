@@ -1,0 +1,77 @@
+questions:
+  - variable: "replicaCount"
+    label: "Number of replicas"
+    description: "Specify the number of replicas for your application"
+    type: "int"
+    required: true
+    default: 1
+    group: "Application Settings"
+  
+  - variable: "image.repository"
+    label: "Image Repository"
+    description: "Enter the image repository for your application"
+    type: "string"
+    required: true
+    default: "my-app"
+    group: "Container Settings"
+
+  - variable: "image.tag"
+    label: "Image Tag"
+    description: "Enter the image tag for your application"
+    type: "string"
+    required: true
+    default: "latest"
+    group: "Container Settings"
+
+  - variable: "service.type"
+    label: "Service Type"
+    description: "Choose the type of service to expose"
+    type: "enum"
+    required: true
+    default: "ClusterIP"
+    options:
+      - "ClusterIP"
+      - "NodePort"
+      - "LoadBalancer"
+    group: "Service Settings"
+
+  - variable: "service.port"
+    label: "Service Port"
+    description: "Enter the port for the service"
+    type: "int"
+    required: true
+    default: 80
+    group: "Service Settings"
+
+  - variable: "resources.limits.cpu"
+    label: "CPU Limit"
+    description: "Set the CPU limit for the application"
+    type: "string"
+    required: false
+    default: "100m"
+    group: "Resource Limits"
+
+  - variable: "resources.limits.memory"
+    label: "Memory Limit"
+    description: "Set the memory limit for the application"
+    type: "string"
+    required: false
+    default: "128Mi"
+    group: "Resource Limits"
+
+  - variable: "resources.requests.cpu"
+    label: "CPU Request"
+    description: "Set the CPU request for the application"
+    type: "string"
+    required: false
+    default: "100m"
+    group: "Resource Requests"
+
+  - variable: "resources.requests.memory"
+    label: "Memory Request"
+    description: "Set the memory request for the application"
+    type: "string"
+    required: false
+    default: "128Mi"
+    group: "Resource Requests"
+
